@@ -1,0 +1,29 @@
+a=int(input())
+a=str(a)
+if len(a)!=6:
+    print("неверный номер")
+if len(a)==6 and '77' in a:
+    h=float(input())
+    n=float(input())
+    m=float(input())
+    x=min(h,n,m)
+    if n==x:
+        print("поздравляем! вы выиграли бонус")
+    else:
+        print("в следующий раз повезет")
+if len(a)==6 and '123' in a:
+    b=str(input('Введите строку'))
+    l=(len(b))**2
+    if l>100:
+        l=100
+    print("вам начислено", l,  "бонусов!")
+
+if len(a)==6:
+    print("хотите принять участие в лотерее?y/n")
+    g=str(input())
+    if g=='y':
+        print("ура! вы учавствуете в лотерее")
+    elif g=='n':
+       print("увы! вы отказались от участия")
+    else:
+        print("ошибка ввода")
