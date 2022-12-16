@@ -1,0 +1,55 @@
+четный вариант
+1.
+import numpy, math
+def a1(a, b, h):
+    y = []
+    for x in numpy.arange(a, b, h):
+        x = round(x, 3)
+        print(x)
+        if x == 1 or x == -1: 
+            print('Catched x = 1')
+            y.append('Division by zero (|x| = 1)')
+        else:
+            square_body = (1 + x**2)/(1 - x**2)
+            if square_body < 0: 
+                print('Catched square_body < 0')
+                y.append('Square is lower than 0')
+                continue
+            else:
+                square = math.sqrt(square_body)
+            y_elem = math.log(square)
+            y.append(y_elem)
+    return y
+
+print(a1(-2, 2, 0.1)) 
+
+2.
+import math
+def a2(string):
+    t2_array = []
+    t2_array.append(len(string))
+    t2_array.append(len(string.split()))
+    t2_letters, t2_numbers, t2_special = 0, 0, 0
+    for symbol in string:
+        if symbol.isalpha():
+            t2_letters += 1
+        elif symbol.isdigit():
+            t2_numbers += 1
+        else:
+            t2_special += 1
+
+    t2_array.append(t2_letters)
+    t2_array.append(t2_numbers)
+    t2_array.append(t2_special)
+    return t2_array
+
+phrase = "[SP3CI4L PHR4S3 2 CH3CK D3F]"
+print(a2(phrase))
+3.
+
+import math
+def a3(num):
+    file = open('a3.txt', 'r', encoding='utf-8').read().splitlines() 
+    return file[num]
+
+print(a3(8))
