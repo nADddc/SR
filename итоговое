@@ -20,3 +20,20 @@ class Actor:
     def getFamiliars(self):
         for familiar in self.familiars:
             print(f'{self.name} знаком с {familiar.name}')
+
+
+def main():
+    Bill = Actor('Билл', 0)  # Персонаж крестьянин
+    print(Bill.profession)  # Проверяем профессию
+    Oliver = Actor('Оливер', 0)  # Персонаж крестьянин
+    Vilma = Actor('Вильма', 2)  # Персонаж торговец
+    Todd = Actor('Тодд', 3)  # Персонаж разбойник
+    Oliver.greetings(Bill)  # Крестьянин приветствует крестьянина
+    Oliver.greetings(Vilma)  # Крестьянин приветствует торговца
+    Oliver.greetings(Vilma)  # Крестьянин приветствует уже знакомого торговца
+    Vilma.getFamiliars()  # Проверка, что торговец тоже знает крестьянина
+    Todd.greetings(Oliver)  # Разбойник приветствует крестьянина
+
+
+if __name__ == "__main__":
+    main()
