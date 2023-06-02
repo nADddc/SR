@@ -1,0 +1,22 @@
+class Actor:
+    list_professions = ['крестьянин', 'горожанин', 'торговец', 'разбойник', 'герой', 'солдат']
+
+    def __init__(self, name, profession_index):
+        self.name = name
+        self.profession = Actor.list_professions[profession_index]
+        self.familiars = []
+
+    def greetings(self, other):
+        if self.profession == other.profession or other in self.familiars:
+            print('Привет! Как дела?')
+        else:
+            print('Здравствуйте!')
+            self.familiars.append(other)
+            other.familiars.append(self)
+
+        if self.profession == 'разбойник' and other.profession != 'разбойник':
+            print('Кошелек или жизнь!')
+
+    def getFamiliars(self):
+        for familiar in self.familiars:
+            print(f'{self.name} знаком с {familiar.name}')
